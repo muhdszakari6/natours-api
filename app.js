@@ -7,6 +7,7 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const csp = require('express-csp');
 const cookieParser = require('cookie-parser');
+const compression = require('compression');
 // eslint-disable-next-line node/no-extraneous-require
 const rateLimit = require('express-rate-limit');
 const AppError = require('./utils/appError');
@@ -109,6 +110,8 @@ app.use(
     ],
   })
 );
+
+app.use(compression());
 
 //Test middleware
 app.use((req, res, next) => {
