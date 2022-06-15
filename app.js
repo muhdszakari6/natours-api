@@ -9,6 +9,7 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
 const compression = require('compression');
+const cors = require('cors');
 
 const rateLimit = require('express-rate-limit');
 const AppError = require('./utils/appError');
@@ -28,6 +29,10 @@ app.set('views', path.join(__dirname, 'views'));
 
 //Global Middlewares
 
+//Implement cors
+app.use(cors());
+
+app.options('*', cors());
 //Set security Http Headers
 // app.use(
 //   helmet({
