@@ -48,9 +48,14 @@ app.use(
           "'self'",
           'https://*.mapbox.com',
           'http://127.0.0.1:3000/*',
+          'https://frozen-plains-28890.herokuapp.com/*',
           'ws://127.0.0.1:*/',
         ],
-        'default-src': ["'self'", 'http://127.0.0.1:3000/*'],
+        'default-src': [
+          "'self'",
+          'http://127.0.0.1:3000/*',
+          'https://frozen-plains-28890.herokuapp.com/*',
+        ],
         'font-src': ["'self'", 'https://fonts.gstatic.com'],
         'img-src': ["'self'", 'data:', 'blob:'],
         'script-src': [
