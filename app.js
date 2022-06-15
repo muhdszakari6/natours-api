@@ -1,3 +1,5 @@
+// eslint-disable-next-line node/no-extraneous-require
+
 const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
@@ -8,7 +10,7 @@ const hpp = require('hpp');
 const csp = require('express-csp');
 const cookieParser = require('cookie-parser');
 const compression = require('compression');
-// eslint-disable-next-line node/no-extraneous-require
+
 const rateLimit = require('express-rate-limit');
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
@@ -19,6 +21,8 @@ const bookingRouter = require('./routes/bookingRoute');
 const viewRouter = require('./routes/viewRoute');
 
 const app = express();
+
+app.enable('trust proxy');
 
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
