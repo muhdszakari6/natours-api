@@ -5,7 +5,6 @@ const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const hpp = require('hpp');
-const csp = require('express-csp');
 const cookieParser = require('cookie-parser');
 const compression = require('compression');
 // eslint-disable-next-line node/no-extraneous-require
