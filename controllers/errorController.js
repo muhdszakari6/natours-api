@@ -7,7 +7,7 @@ const sendErrorDev = (err, req, res) => {
       status: err.status,
       error: err,
       message: err.message,
-      stacK: err.stack,
+      stack: err.stack,
     });
   } else {
     //RENDER error
@@ -38,6 +38,7 @@ const sendErrorProd = (err, req, res) => {
     });
   }
 
+  //RENDER error
   if (err.isOperational) {
     //Operational, trusted error: send message to the client.
     return res.status(err.statusCode).render('error', {
